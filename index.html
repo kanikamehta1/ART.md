@@ -1,0 +1,148 @@
+
+
+
+
+<style>.row{border: 1px solid blue; padding: 0px;margin-top: 0px;margin-bottom: :0px;;}.numbcell{background-color:#355DB2;color: #FFFFFF;text-align: 
+right;font-family: 'Helvetica Neue', Helvetica, Arial, Verdana;}.cell{padding:0px;background-color: #FFF6A6;}.cellp{line-height: 110%;color: #05007E;padding: 
+0px;margin-top:0px;margin-bottom: 0px;font-family: Courier, 'Courier New';}.comment{color:#A1A1A1;}</style><script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script><div><table 
+class="codetable"><tbody><tr class="row"><td class="numbcell">1</td><td class="cell"><p 
+class="cellp" style="margin-left: 0px;"><span class="comment">//link to this sketch/class= https://www.openprocessing.org/sketch/654729</span></p></td></tr><tr 
+class="row"><td class="numbcell">2</td><td class="cell"><p class="cellp" style="margin-left: 
+0px;"><span class="comment">// the p5 libraries= https://p5js.org/libraries/ </span></p></td></tr><tr 
+class="row"><td class="numbcell">&nbsp;</td><td class="cell"><p class="cellp" style="margin-left: 
+0px;"></p></td></tr><tr class="row"><td class="numbcell">3</td><td class="cell"><p class="cellp" 
+style="margin-left: 0px;">let font,</p></td></tr><tr class="row"><td class="numbcell">4</td><td 
+class="cell"><p class="cellp" style="margin-left: 0px;">fontsize = 50;</p></td></tr><tr 
+class="row"><td class="numbcell">&nbsp;</td><td class="cell"><p class="cellp" style="margin-left: 
+0px;"></p></td></tr><tr class="row"><td class="numbcell">5</td><td class="cell"><p class="cellp" 
+style="margin-left: 0px;">function preload() </p></td></tr><tr class="row"><td class="numbcell">6</td><td 
+class="cell"><p class="cellp" style="margin-left: 30px;"> {</p></td></tr><tr class="row"><td 
+class="numbcell">7</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> font = 
+loadFont('LOVES.ttf');</p></td></tr><tr class="row"><td class="numbcell">8</td><td class="cell"><p class="cellp" 
+style="margin-left: 30px;"> }</p></td></tr><tr class="row"><td class="numbcell">&nbsp;</td><td class="cell"><p 
+class="cellp" style="margin-left: 0px;"></p></td></tr><tr class="row"><td class="numbcell">9</td><td class="cell"><p 
+class="cellp" style="margin-left: 0px;">var input;</p></td></tr><tr class="row"><td class="numbcell">10</td><td 
+class="cell"><p class="cellp" style="margin-left: 0px;">var b;</p></td></tr><tr class="row"><td class="numbcell">11</td><td 
+class="cell"><p class="cellp" style="margin-left: 0px;">var a;</p></td></tr><tr class="row"><td class="numbcell">12</td><td 
+class="cell"><p class="cellp" style="margin-left: 0px;">var curr;</p></td></tr><tr class="row"><td 
+class="numbcell">13</td><td class="cell"><p class="cellp" style="margin-left: 0px;">var prev;</p></td></tr><tr 
+class="row"><td class="numbcell">14</td><td class="cell"><p class="cellp" style="margin-left: 0px;">var 
+painting = false;</p></td></tr><tr class="row"><td class="numbcell">15</td><td class="cell"><p class="cellp" style="margin-left: 0px;">var fo = 0;</p></td></tr><tr 
+class="row"><td class="numbcell">16</td><td class="cell"><p class="cellp" style="margin-left: 0px;">var dir = [];</p></td></tr><tr 
+class="row"><td class="numbcell">&nbsp;</td><td class="cell"><p class="cellp" 
+style="margin-left: 0px;"></p></td></tr><tr class="row"><td class="numbcell">&nbsp;</td><td 
+class="cell"><p class="cellp" style="margin-left: 0px;"></p></td></tr><tr class="row"><td 
+class="numbcell">17</td><td class="cell"><p class="cellp" style="margin-left: 0px;">function setup() </p></td></tr><tr class="row"><td 
+class="numbcell">18</td><td class="cell"><p class="cellp" style="margin-left: 0px;">{</p></td></tr><tr 
+class="row"><td class="numbcell">19</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> 
+createCanvas(windowWidth, windowHeight);</p></td></tr><tr class="row"><td class="numbcell">20</td><td 
+class="cell"><p class="cellp" style="margin-left: 30px;"> input=createInput('Enter text here + mouse click n be artsy!');</p></td></tr><tr 
+class="row"><td class="numbcell">21</td><td class="cell"><p class="cellp" style="margin-left: 30px;"> 
+input.position(650, 100);</p></td></tr><tr class="row"><td class="numbcell">22</td><td 
+class="cell"><p class="cellp" style="margin-left: 30px;"> b = createGraphics(1150,1000);</p></td></tr><tr 
+class="row"><td class="numbcell">23</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> 
+a = new Ellipse();</p></td></tr><tr class="row"><td class="numbcell">24</td><td class="cell"><p 
+class="cellp" style="margin-left: 30px;"> textFont(font);</p></td></tr><tr class="row"><td 
+class="numbcell">25</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> 
+textSize(fontsize);</p></td></tr><tr class="row"><td class="numbcell">26</td><td 
+class="cell"><p class="cellp" style="margin-left: 0px;"> textAlign(CENTER, CENTER);</p></td></tr><tr 
+class="row"><td class="numbcell">27</td><td class="cell"><p class="cellp" style="margin-left: 60px;"> 
+curr = createVector(0,0);</p></td></tr><tr class="row"><td class="numbcell">28</td><td class="cell"><p 
+class="cellp" style="margin-left: 0px;"> prev = createVector(0,0);</p></td></tr><tr class="row"><td 
+class="numbcell">29</td><td class="cell"><p class="cellp" style="margin-left: 0px;">}</p></td></tr><tr 
+class="row"><td class="numbcell">&nbsp;</td><td class="cell"><p class="cellp" style="margin-left: 0px;"></p></td></tr><tr 
+class="row"><td class="numbcell">30</td><td class="cell"><p class="cellp" style="margin-left: 0px;">function draw() 
+</p></td></tr><tr class="row"><td class="numbcell">31</td><td class="cell"><p class="cellp" style="margin-left: 0px;">{</p></td></tr><tr 
+class="row"><td class="numbcell">32</td><td class="cell"><p class="cellp" style="margin-left: 30px;"> 
+background('black');</p></td></tr><tr class="row"><td class="numbcell">33</td><td class="cell"><p 
+class="cellp" style="margin-left: 30px;"> ellipse(mouseX, mouseY, 20, 60);</p></td></tr><tr 
+class="row"><td class="numbcell">34</td><td class="cell"><p class="cellp" style="margin-left: 30px;"> b.background('gold');</p></td></tr><tr 
+class="row"><td class="numbcell">35</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> b.noFill();</p></td></tr><tr 
+class="row"><td class="numbcell">36</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> image(b, 150, 75);</p></td></tr><tr 
+class="row"><td class="numbcell">&nbsp;</td><td class="cell"><p class="cellp" style="margin-left: 30px;"> </p></td></tr><tr 
+class="row"><td class="numbcell">37</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> 
+if (millis() &gt; fo &amp;&amp; painting) </p></td></tr><tr class="row"><td class="numbcell">38</td><td 
+class="cell"><p class="cellp" style="margin-left: 60px;"> {</p></td></tr><tr class="row"><td 
+class="numbcell">39</td><td class="cell"><p class="cellp" style="margin-left: 90px;"> 
+curr.x = mouseX;</p></td></tr><tr class="row"><td class="numbcell">40</td><td class="cell"><p class="cellp" 
+style="margin-left: 60px;"> curr.y = mouseY;</p></td></tr><tr class="row"><td class="numbcell">41</td><td 
+class="cell"><p class="cellp" style="margin-left: 90px;"> var force = p5.Vector.sub(curr, prev);</p></td></tr><tr 
+class="row"><td class="numbcell">42</td><td class="cell"><p class="cellp" style="margin-left: 60px;"> 
+force.mult(0.05);</p></td></tr><tr class="row"><td class="numbcell">43</td><td class="cell"><p 
+class="cellp" style="margin-left: 90px;"> dir[dir.length - 1].add(curr, force);</p></td></tr><tr 
+class="row"><td class="numbcell">44</td><td class="cell"><p class="cellp" style="margin-left: 60px;"> 
+next = millis() + random(100);</p></td></tr><tr class="row"><td class="numbcell">45</td><td class="cell"><p 
+class="cellp" style="margin-left: 90px;"> prev.x = curr.x;</p></td></tr><tr class="row"><td class="numbcell">46</td><td 
+class="cell"><p class="cellp" style="margin-left: 60px;"> prev.y = curr.y;</p></td></tr><tr class="row"><td 
+class="numbcell">47</td><td class="cell"><p class="cellp" style="margin-left: 60px;"> }</p></td></tr><tr 
+class="row"><td class="numbcell">&nbsp;</td><td class="cell"><p class="cellp" style="margin-left: 0px;"></p></td></tr><tr 
+class="row"><td class="numbcell">&nbsp;</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> </p></td></tr><tr 
+class="row"><td class="numbcell">48</td><td class="cell"><p class="cellp" style="margin-left: 30px;"> for( var i = 0; i &lt; dir.length; i++) </p></td></tr><tr 
+class="row"><td class="numbcell">49</td><td class="cell"><p class="cellp" style="margin-left: 30px;"> {</p></td></tr><tr 
+class="row"><td class="numbcell">50</td><td class="cell"><p class="cellp" style="margin-left: 30px;"> 
+dir[i].update();</p></td></tr><tr class="row"><td class="numbcell">51</td><td class="cell"><p class="cellp" 
+style="margin-left: 30px;"> dir[i].display();</p></td></tr><tr class="row"><td class="numbcell">52</td><td 
+class="cell"><p class="cellp" style="margin-left: 0px;"> }</p></td></tr><tr class="row"><td class="numbcell">&nbsp;</td><td 
+class="cell"><p class="cellp" style="margin-left: 60px;"> </p></td></tr><tr class="row"><td class="numbcell">53</td><td 
+class="cell"><p class="cellp" style="margin-left: 30px;"> a.grow();</p></td></tr><tr class="row"><td 
+class="numbcell">54</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> a.display();</p></td></tr><tr 
+class="row"><td class="numbcell">&nbsp;</td><td class="cell"><p class="cellp" style="margin-left: 30px;"> </p></td></tr><tr 
+class="row"><td class="numbcell">55</td><td class="cell"><p class="cellp" style="margin-left: 30px;"> 
+stroke(255);</p></td></tr><tr class="row"><td class="numbcell">56</td><td class="cell"><p class="cellp" 
+style="margin-left: 0px;"> strokeWeight(8);</p></td></tr><tr class="row"><td class="numbcell">57</td><td class="cell"><p 
+class="cellp" style="margin-left: 30px;"> text(input.value(), windowWidth/2,windowHeight/2);</p></td></tr><tr 
+class="row"><td class="numbcell">58</td><td class="cell"><p class="cellp" style="margin-left: 0px;">}</p></td></tr><tr 
+class="row"><td class="numbcell">&nbsp;</td><td class="cell"><p class="cellp" style="margin-left: 0px;"></p></td></tr><tr 
+class="row"><td class="numbcell">&nbsp;</td><td class="cell"><p class="cellp" style="margin-left: 0px;"></p></td></tr><tr 
+class="row"><td class="numbcell">&nbsp;</td><td class="cell"><p class="cellp" style="margin-left: 0px;"></p></td></tr><tr 
+class="row"><td class="numbcell">59</td><td class="cell"><p class="cellp" style="margin-left: 0px;">function Ellipse() 
+</p></td></tr><tr class="row"><td class="numbcell">60</td><td class="cell"><p class="cellp" style="margin-left: 
+0px;">{</p></td></tr><tr class="row"><td class="numbcell">61</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> 
+this.x = windowWidth/2;</p></td></tr><tr class="row"><td class="numbcell">62</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> this.y = windowHeight/2;</p></td></tr><tr class="row"><td 
+class="numbcell">63</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> this.dimension = 1;</p></td></tr><tr 
+class="row"><td class="numbcell">&nbsp;</td><td class="cell"><p class="cellp" style="margin-left: 0px;"></p></td></tr><tr 
+class="row"><td class="numbcell">64</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> this.grow = function() 
+</p></td></tr><tr class="row"><td class="numbcell">65</td><td class="cell"><p class="cellp" style="margin-left: 60px;"> 
+{</p></td></tr><tr class="row"><td class="numbcell">66</td><td class="cell"><p class="cellp" style="margin-left: 60px;"> 
+this.dimension++;</p></td></tr><tr class="row"><td class="numbcell">67</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> };</p></td></tr><tr class="row"><td 
+class="numbcell">&nbsp;</td><td class="cell"><p class="cellp" style="margin-left: 0px;"></p></td></tr><tr class="row"><td 
+class="numbcell">68</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> this.display = function() 
+</p></td></tr><tr class="row"><td class="numbcell">69</td><td class="cell"><p class="cellp" style="margin-left: 30px;"> {</p></td></tr><tr 
+class="row"><td class="numbcell">70</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> stroke(204,0,102);</p></td></tr><tr class="row"><td 
+class="numbcell">71</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> strokeWeight(30);</p></td></tr><tr 
+class="row"><td class="numbcell">72</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> 
+ellipseMode(CENTER);</p></td></tr><tr class="row"><td class="numbcell">73</td><td class="cell"><p 
+class="cellp" style="margin-left: 30px;"> ellipse(this.x, this.y, this.dimension, this.dimension);</p></td></tr><tr 
+class="row"><td class="numbcell">74</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> };</p></td></tr><tr 
+class="row"><td class="numbcell">75</td><td class="cell"><p class="cellp" style="margin-left: 0px;">}</p></td></tr><tr 
+class="row"><td class="numbcell">&nbsp;</td><td class="cell"><p class="cellp" style="margin-left: 0px;"></p></td></tr><tr 
+class="row"><td class="numbcell">76</td><td class="cell"><p class="cellp" style="margin-left: 0px;">function Path() 
+</p></td></tr><tr class="row"><td class="numbcell">77</td><td class="cell"><p class="cellp" style="margin-left: 
+0px;">{</p></td></tr><tr class="row"><td class="numbcell">78</td><td class="cell"><p class="cellp" style="margin-left: 
+0px;"> this.particles = [];</p></td></tr><tr class="row"><td class="numbcell">79</td><td class="cell"><p class="cellp" 
+style="margin-left: 0px;"> this.hue = random(50);</p></td></tr><tr class="row"><td class="numbcell">80</td><td 
+class="cell"><p class="cellp" style="margin-left: 0px;">}</p></td></tr><tr class="row"><td class="numbcell">&nbsp;</td><td 
+class="cell"><p class="cellp" style="margin-left: 0px;"></p></td></tr><tr class="row"><td class="numbcell">81</td><td 
+class="cell"><p class="cellp" style="margin-left: 0px;">Path.prototype.add = function(position, force)</p></td></tr><tr 
+class="row"><td class="numbcell">82</td><td class="cell"><p class="cellp" style="margin-left: 0px;">{</p></td></tr><tr 
+class="row"><td class="numbcell">83</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> 
+this.particles.push(new Particle(position, force, this.hue));</p></td></tr><tr class="row"><td class="numbcell">84</td><td 
+class="cell"><p class="cellp" style="margin-left: 0px;">}</p></td></tr><tr class="row"><td class="numbcell">&nbsp;</td><td 
+class="cell"><p class="cellp" style="margin-left: 0px;"></p></td></tr><tr class="row"><td class="numbcell">&nbsp;</td><td 
+class="cell"><p class="cellp" style="margin-left: 0px;"></p></td></tr><tr class="row"><td class="numbcell">85</td><td 
+class="cell"><p class="cellp" style="margin-left: 0px;">Path.prototype.update = function() </p></td></tr><tr class="row"><td 
+class="numbcell">86</td><td class="cell"><p class="cellp" style="margin-left: 0px;">{ </p></td></tr><tr class="row"><td 
+class="numbcell">87</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> for (var i = 0; i &lt; 
+this.particles.length; i++)</p></td></tr><tr class="row"><td class="numbcell">88</td><td class="cell"><p class="cellp" 
+style="margin-left: 60px;"> {</p></td></tr><tr class="row"><td class="numbcell">89</td><td class="cell"><p class="cellp" 
+style="margin-left: 60px;"> this.particles[i].update();</p></td></tr><tr class="row"><td class="numbcell">90</td><td 
+class="cell"><p class="cellp" style="margin-left: 0px;"> }</p></td></tr><tr class="row"><td class="numbcell">91</td><td class="cell"><p class="cellp" style="margin-left: 0px;">} </p></td></tr><tr class="row"><td class="numbcell">&nbsp;</td><td class="cell"><p class="cellp" style="margin-left: 0px;"></p></td></tr><tr class="row"><td class="numbcell">&nbsp;</td><td class="cell"><p class="cellp" style="margin-left: 0px;"></p></td></tr><tr class="row"><td class="numbcell">92</td><td class="cell"><p class="cellp" 
+style="margin-left: 0px;">Path.prototype.display = function() </p></td></tr><tr class="row"><td class="numbcell">93</td><td class="cell"><p class="cellp" style="margin-left: 0px;">{</p></td></tr><tr class="row"><td class="numbcell">94</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> for (var i = this.particles.length - 1; i &gt;= 0; i--) </p></td></tr><tr class="row"><td class="numbcell">95</td><td class="cell"><p class="cellp" style="margin-left: 30px;"> {</p></td></tr><tr 
+class="row"><td class="numbcell">96</td><td class="cell"><p class="cellp" style="margin-left: 30px;"> if (this.particles[i].lifespan &lt;= 0) </p></td></tr><tr class="row"><td class="numbcell">97</td><td class="cell"><p class="cellp" style="margin-left: 90px;"> {</p></td></tr><tr 
+class="row"><td class="numbcell">98</td><td class="cell"><p class="cellp" style="margin-left: 30px;"> this.particles.splice(i, 1);</p></td></tr><tr 
+class="row"><td class="numbcell">99</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> } 
+else </p></td></tr><tr class="row"><td class="numbcell">100</td><td class="cell"><p class="cellp" 
+style="margin-left: 120px;"> {</p></td></tr><tr class="row"><td class="numbcell">101</td><td class="cell"><p 
+class="cellp" style="margin-left: 30px;"> this.particles[i].display(this.particles[i+1]);</p></td></tr><tr 
+class="row"><td class="numbcell">102</td><td class="cell"><p class="cellp" style="margin-left: 90px;"> }</p></td></tr><tr 
+class="row"><td class="numbcell">103</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> }</p></td></tr><tr class="row"><td class="numbcell">&nbsp;</td><td class="cell"><p class="cellp" style="margin-left: 0px;"></p></td></tr><tr class="row"><td class="numbcell">104</td><td class="cell"><p class="cellp" style="margin-left: 0px;">} </p></td></tr><tr class="row"><td class="numbcell">&nbsp;</td><td class="cell"><p class="cellp" style="margin-left: 0px;"></p></td></tr><tr class="row"><td class="numbcell">105</td><td class="cell"><p class="cellp" style="margin-left: 0px;">function Particle(position, force, hue) </p></td></tr><tr class="row"><td class="numbcell">106</td><td class="cell"><p class="cellp" style="margin-left: 0px;">{</p></td></tr><tr class="row"><td class="numbcell">107</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> this.position = createVector(position.x, position.y);</p></td></tr><tr class="row"><td class="numbcell">108</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> this.velocity = createVector(force.x, force.y);</p></td></tr><tr class="row"><td class="numbcell">109</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> this.drag = 0.95;</p></td></tr><tr class="row"><td class="numbcell">110</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> this.lifespan = 255;</p></td></tr><tr class="row"><td class="numbcell">111</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> this.size = 5;</p></td></tr><tr class="row"><td class="numbcell">112</td><td class="cell"><p class="cellp" style="margin-left: 0px;">}</p></td></tr><tr class="row"><td class="numbcell">&nbsp;</td><td class="cell"><p class="cellp" style="margin-left: 0px;"></p></td></tr><tr class="row"><td class="numbcell">113</td><td class="cell"><p class="cellp" style="margin-left: 0px;">Particle.prototype.update = function() </p></td></tr><tr class="row"><td class="numbcell">114</td><td class="cell"><p class="cellp" style="margin-left: 0px;">{</p></td></tr><tr class="row"><td class="numbcell">115</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> this.position.add(this.velocity);</p></td></tr><tr class="row"><td class="numbcell">116</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> this.velocity.mult(this.drag);</p></td></tr><tr class="row"><td class="numbcell">117</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> this.lifespan = this.lifespan-1;</p></td></tr><tr class="row"><td class="numbcell">118</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> this.size = this.size+0.05;</p></td></tr><tr class="row"><td class="numbcell">119</td><td class="cell"><p class="cellp" style="margin-left: 0px;">}</p></td></tr><tr class="row"><td class="numbcell">&nbsp;</td><td class="cell"><p class="cellp" style="margin-left: 0px;"></p></td></tr><tr class="row"><td class="numbcell">&nbsp;</td><td class="cell"><p class="cellp" style="margin-left: 0px;"></p></td></tr><tr class="row"><td class="numbcell">120</td><td class="cell"><p class="cellp" style="margin-left: 0px;">Particle.prototype.display = function(other)</p></td></tr><tr class="row"><td class="numbcell">121</td><td class="cell"><p class="cellp" style="margin-left: 0px;">{</p></td></tr><tr class="row"><td class="numbcell">122</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> noStroke();</p></td></tr><tr class="row"><td class="numbcell">123</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> fill(0,12, this.lifespan*2); </p></td></tr><tr class="row"><td class="numbcell">124</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> ellipse(this.position.x,this.position.y-(this.size*20), this.size, this.size); </p></td></tr><tr class="row"><td class="numbcell">&nbsp;</td><td class="cell"><p class="cellp" style="margin-left: 0px;"></p></td></tr><tr class="row"><td class="numbcell">125</td><td class="cell"><p class="cellp" style="margin-left: 0px;">}</p></td></tr><tr class="row"><td class="numbcell">&nbsp;</td><td class="cell"><p class="cellp" style="margin-left: 0px;"></p></td></tr><tr class="row"><td class="numbcell">126</td><td class="cell"><p class="cellp" style="margin-left: 0px;">function mousePressed() </p></td></tr><tr class="row"><td class="numbcell">127</td><td class="cell"><p class="cellp" style="margin-left: 0px;">{</p></td></tr><tr class="row"><td class="numbcell">128</td><td class="cell"><p class="cellp" style="margin-left: 30px;"> a.dimension = 1;</p></td></tr><tr class="row"><td class="numbcell">129</td><td class="cell"><p class="cellp" style="margin-left: 30px;"> redraw();</p></td></tr><tr class="row"><td class="numbcell">130</td><td class="cell"><p class="cellp" style="margin-left: 30px;"> fo = 0;</p></td></tr><tr class="row"><td class="numbcell">131</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> painting = true;</p></td></tr><tr class="row"><td class="numbcell">132</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> prev.x = mouseX;</p></td></tr><tr class="row"><td class="numbcell">133</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> prev.y = mouseY;</p></td></tr><tr class="row"><td class="numbcell">134</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> dir.push(new Path());</p></td></tr><tr class="row"><td class="numbcell">&nbsp;</td><td class="cell"><p class="cellp" style="margin-left: 30px;"> </p></td></tr><tr class="row"><td class="numbcell">135</td><td class="cell"><p class="cellp" style="margin-left: 0px;">}</p></td></tr><tr class="row"><td class="numbcell">136</td><td class="cell"><p class="cellp" style="margin-left: 0px;">function mouseReleased()</p></td></tr><tr class="row"><td class="numbcell">137</td><td class="cell"><p class="cellp" style="margin-left: 0px;">{</p></td></tr><tr class="row"><td class="numbcell">138</td><td class="cell"><p class="cellp" style="margin-left: 0px;"> painting = false;</p></td></tr><tr class="row"><td class="numbcell">139</td><td class="cell"><p class="cellp" style="margin-left: 0px;">}</p></td></tr></tbody></table><input type="button" value="Toggle line numbers" onclick="$(this).parent().parent().find('.numbcell').toggle(300)"></div>
